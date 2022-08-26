@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Downgrade VIP</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+      .vip{
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+    <h1 class="display-4">Our service Downgraded</h1>
+    <p class="lead">{{message}} have Downgraded successfully....</p>
+    <p class="lead">If You think its a mistake, You upgrade to VIP by clicking below</p>
+    <form  action="/upgradevip" method="post">
+      <input type="text" name="vip" value={{message}} hidden>
+      <button class="btn btn-large btn-warning vip" type="submit" name="button">VIP</button>
+    </form>
+    <p class="lead">You can redirect to if you are done</p>
+    <form  action="/retry" method="post">
+      <button class="btn btn-large btn-secondary" type="submit" name="button">Home</button>
+    </form>
+  </div>
+
+</div>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Data Exists Message</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+      html, body{
+        height: 100%
+      }
+
+      .unsub .signup .vip{
+        margin-bottom: 10px;
+      }
+
+      .check{
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="jumbotron jumbotron-fluid check">
+      <h1 class="display-4">Data Already Exits!!!</h1>
+      <p class="lead">{{message}} already exits in our list</p>
+      <form  action={{formtype}} method="post" {{unsubdata}}>
+        <p class="lead">{{vipupdown}} VIP</p>
+        <input type="text" name="vip" value={{message}} hidden>
+        <button class="btn btn-large btn-primary vip" type="submit" name="button">VIP</button>
+      </form>
+      <form  action="/unsubscribe" method="post" {{unsubdata}}>
+        <p class="lead">💀Unsubscribe💀</p>
+        <input type="text" name="unsubscribe" value={{message}} hidden>
+        <button class="btn btn-large btn-danger unsub" type="submit" name="button">Unsubscribe</button>
+      </form>
+      <form  action="/subscribe" method="post" {{subagain}}>
+        <p class="lead">Seems you have unsubscribed our service before</p>
+        <p class="lead">No worries🙂, You can subscribe again... Click below</p>
+        <input type="text" name="subscribe" value={{message}} hidden>
+        <button class="btn btn-large btn-primary signup" type="submit" name="button">Subscribe</button>
+      </form>
+      <form  action="/retry" method="post">
+        <p class="lead">Sign Up with another mail id.</p>
+        <button class="btn btn-large btn-secondary" type="submit" name="button">Retry</button>
+      </form>
+    </div>
+  </body>
+</html>

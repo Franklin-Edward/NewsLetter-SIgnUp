@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Unsubscribed Message</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+      .delete{
+        margin-bottom: 10px;
+      }
+      .signup{
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+    <h1 class="display-4">🙁😕😞😔😢😭</h1>
+    <p class="lead">{{message}} has unsubscribed. We are sorry see you leave.....</p>
+    <form  action="/subscribe" method="post">
+      <p class="lead">If you think its a mistake, You can subscribe again by clicking below..</p>
+      <input type="text" name="subscribe" value={{message}} hidden>
+      <button class="btn btn-large btn-primary signup" type="submit" name="button">Subscribe</button>
+    </form>
+    <form  action="/delete" method="post">
+      <p>Or If you want to kill even more😔, You can delete the data</p>
+      <input type="text" name="delete" value={{message}} hidden>
+      <button class="btn btn-large btn-danger delete" type="submit" name="button">Delete</button>
+    </form>
+    <form  action="/retry" method="post">
+      <p>Sign Up with another mail-id,</p>
+      <button class="btn btn-large btn-primary" type="submit" name="button">Sign Up!</button>
+    </form>
+  </div>
+</div>
+  </body>
+</html>
